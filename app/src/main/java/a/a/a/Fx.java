@@ -221,10 +221,10 @@ public class Fx {
                 int space = bean.spec.indexOf(" ");
                 if (bean.parameters.isEmpty()) {
                     opcode = bean.type;
-                    moreBlock = "_" + (space < 0 ? bean.spec : bean.spec.substring(0, space)) + "()" + ReturnMoreblockManager.getMbEnd(bean.type);
+                    moreBlock = (space < 0 ? bean.spec : bean.spec.substring(0, space)) + "()" + ReturnMoreblockManager.getMbEnd(bean.type);
                 } else {
                     ArrayList<String> paramsTypes = extractParamsTypes(bean.spec);
-                    opcode = "_" + bean.spec.substring(0, space) + "(";
+                    opcode = bean.spec.substring(0, space) + "(";
                     boolean hasStringParam = false;
 
                     for (int i = 0; i < params.size(); i++) {
@@ -253,7 +253,7 @@ public class Fx {
                 moreBlock = op;
                 break;
             case "getArg":
-                opcode = "_" + bean.spec;
+                opcode = bean.spec;
                 break;
             case "getVar":
                 opcode = bean.spec;
@@ -353,7 +353,7 @@ public class Fx {
             case "repeat":
                 stack = bean.subStack1;
                 opcode = String.format("""
-                                for(int _repeat%s = 0; _repeat%s < (int)(%s); _repeat%s++) {
+                                for(int repeat%s = 0; repeat%s < (int)(%s); repeat%s++) {
                                 %s
                                 }""",
                         bean.id, bean.id, params.get(0), bean.id,
