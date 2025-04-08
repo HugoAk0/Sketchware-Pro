@@ -736,7 +736,7 @@ public class Lx {
      * @return Code of a More Block
      */
     public static String getMoreBlockCode(String moreBlockName, String moreBlockSpec, String moreBlockLogic) {
-        String code = "public " + ReturnMoreblockManager.getMbTypeCode(moreBlockName) +
+        String code = "public " + ReturnMoreblockManager.getMbTypeCode(moreBlockName) + " " +
                 ReturnMoreblockManager.getMbName(moreBlockName) + "(";
         ArrayList<String> parameterSpecs = FB.c(moreBlockSpec);
         boolean isFirstParameter = true;
@@ -752,7 +752,7 @@ public class Lx {
                             str += ", ";
                         }
 
-                        code = str + "final boolean _" + parameterSpec.substring(3);
+                        code = str + "final boolean " + parameterSpec.substring(3);
                         break;
 
                     case 'd':
@@ -761,7 +761,7 @@ public class Lx {
                             str += ", ";
                         }
 
-                        code = str + "final double _" + parameterSpec.substring(3);
+                        code = str + "final double " + parameterSpec.substring(3);
                         break;
 
                     case 's':
@@ -770,7 +770,7 @@ public class Lx {
                             str += ", ";
                         }
 
-                        code = str + "final String _" + parameterSpec.substring(3);
+                        code = str + "final String " + parameterSpec.substring(3);
                         break;
 
                     default:
