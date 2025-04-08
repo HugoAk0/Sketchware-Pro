@@ -121,16 +121,16 @@ public class Ox {
                 if (projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_TOOLBAR)
                         || projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_FAB)) {
                     XmlBuilder coordinatorLayoutTag = new XmlBuilder("androidx.coordinatorlayout.widget.CoordinatorLayout");
-                    coordinatorLayoutTag.addAttribute("android", "id", "@+id/_coordinator");
+                    coordinatorLayoutTag.addAttribute("android", "id", "@+id/coordinator");
                     aci.inject(coordinatorLayoutTag, "CoordinatorLayout");
                     rootLayout = coordinatorLayoutTag;
                 }
                 if (projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_TOOLBAR)) {
-                    XmlBuilder toolbarTag = new XmlBuilder("androidx.appcompat.widget.Toolbar");
+                    XmlBuilder toolbarTag = new XmlBuilder("com.google.android.material.appbar.MaterialToolbar");
                     toolbarTag.addAttribute("android", "id", "@+id/_toolbar");
                     aci.inject(toolbarTag, "Toolbar");
                     XmlBuilder appBarLayoutTag = new XmlBuilder("com.google.android.material.appbar.AppBarLayout");
-                    appBarLayoutTag.addAttribute("android", "id", "@+id/_app_bar");
+                    appBarLayoutTag.addAttribute("android", "id", "@+id/app_bar");
                     aci.inject(appBarLayoutTag, "AppBarLayout");
                     if (collapsingToolbarLayout != null) {
                         collapsingToolbarLayout.a(toolbarTag);
@@ -155,7 +155,7 @@ public class Ox {
                 }
                 if (projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_DRAWER)) {
                     XmlBuilder drawerLayoutTag = new XmlBuilder("androidx.drawerlayout.widget.DrawerLayout");
-                    drawerLayoutTag.addAttribute("android", "id", "@+id/_drawer");
+                    drawerLayoutTag.addAttribute("android", "id", "@+id/_drawer_");
                     aci.inject(drawerLayoutTag, "DrawerLayout");
                     drawerLayoutTag.a(rootLayout);
                     XmlBuilder linearLayoutTag = new XmlBuilder("LinearLayout");
