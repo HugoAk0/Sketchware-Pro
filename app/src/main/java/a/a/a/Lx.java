@@ -135,7 +135,7 @@ public class Lx {
         }
 
         ConstVarComponent extraMetadata = metadata.x;
-        if (isLibraryNotExcluded(BuiltInLibraries.CIRCLE_IMAGEVIEW, excludedLibraries) && extraMetadata.isCircleImageViewUsed) {
+        if (isLibraryNotExcluded(BuiltInLibraries.CIRCLEIMAGEVIEW, excludedLibraries) && extraMetadata.isCircleImageViewUsed) {
             content.append("implementation 'de.hdodenhof:circleimageview:3.1.0'\r\n");
         }
 
