@@ -127,7 +127,7 @@ public class Ox {
                 }
                 if (projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_TOOLBAR)) {
                     XmlBuilder toolbarTag = new XmlBuilder("com.google.android.material.appbar.MaterialToolbar");
-                    toolbarTag.addAttribute("android", "id", "@+id/_toolbar");
+                    toolbarTag.addAttribute("android", "id", "@+id/toolbar");
                     aci.inject(toolbarTag, "Toolbar");
                     XmlBuilder appBarLayoutTag = new XmlBuilder("com.google.android.material.appbar.AppBarLayout");
                     appBarLayoutTag.addAttribute("android", "id", "@+id/app_bar");
@@ -155,7 +155,7 @@ public class Ox {
                 }
                 if (projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_DRAWER)) {
                     XmlBuilder drawerLayoutTag = new XmlBuilder("androidx.drawerlayout.widget.DrawerLayout");
-                    drawerLayoutTag.addAttribute("android", "id", "@+id/_drawer_");
+                    drawerLayoutTag.addAttribute("android", "id", "@+id/_drawer");
                     aci.inject(drawerLayoutTag, "DrawerLayout");
                     drawerLayoutTag.a(rootLayout);
                     XmlBuilder linearLayoutTag = new XmlBuilder("LinearLayout");
