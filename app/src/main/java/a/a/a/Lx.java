@@ -736,7 +736,7 @@ public class Lx {
      * @return Code of a More Block
      */
     public static String getMoreBlockCode(String moreBlockName, String moreBlockSpec, String moreBlockLogic) {
-        String code = "public " + ReturnMoreblockManager.getMbTypeCode(moreBlockName) + " _" +
+        String code = "public " + ReturnMoreblockManager.getMbTypeCode(moreBlockName) +
                 ReturnMoreblockManager.getMbName(moreBlockName) + "(";
         ArrayList<String> parameterSpecs = FB.c(moreBlockSpec);
         boolean isFirstParameter = true;
