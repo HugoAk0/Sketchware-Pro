@@ -731,7 +731,7 @@ public class Jx {
 
         if (buildConfig.g) {
             if (projectFileBean.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_TOOLBAR) && !projectFileBean.fileName.contains("_fragment")) {
-                addImport("androidx.appcompat.widget.Toolbar");
+                addImport("com.google.android.material.appbar.MaterialToolbar");
                 addImport("androidx.coordinatorlayout.widget.CoordinatorLayout");
                 addImport("com.google.android.material.appbar.AppBarLayout");
 
@@ -748,18 +748,18 @@ public class Jx {
                                     "});"
                     );
                 } else {
-                    fields.add("private Toolbar _toolbar;");
-                    fields.add("private AppBarLayout _app_bar;");
-                    fields.add("private CoordinatorLayout _coordinator;");
+                    fields.add("private Toolbar toolbar;");
+                    fields.add("private AppBarLayout app_bar;");
+                    fields.add("private CoordinatorLayout coordinator;");
 
                     initializeMethodCode.add(
-                            "_app_bar = findViewById(R.id._app_bar);" + EOL +
-                                    "_coordinator = findViewById(R.id._coordinator);" + EOL +
-                                    "_toolbar = findViewById(R.id._toolbar);" + EOL +
-                                    "setSupportActionBar(_toolbar);" + EOL +
+                            "app_bar = findViewById(R.id.app_bar);" + EOL +
+                                    "coordinator = findViewById(R.id.coordinator);" + EOL +
+                                    "toolbar = findViewById(R.id.toolbar);" + EOL +
+                                    "setSupportActionBar(toolbar);" + EOL +
                                     "getSupportActionBar().setDisplayHomeAsUpEnabled(true);" + EOL +
                                     "getSupportActionBar().setHomeButtonEnabled(true);" + EOL +
-                                    "_toolbar.setNavigationOnClickListener(new View.OnClickListener() {" + EOL +
+                                    "toolbar.setNavigationOnClickListener(new View.OnClickListener() {" + EOL +
                                     "@Override" + EOL +
                                     "public void onClick(View _v) {" + EOL +
                                     "onBackPressed();" + EOL +
@@ -826,16 +826,18 @@ public class Jx {
         addImport("android.text.*");
         addImport("android.text.style.*");
         addImport("android.util.*");
-        addImport("android.webkit.*");
+        //addImport("android.webkit.*");
         addImport("android.animation.*");
         addImport("android.view.animation.*");
         addImport("java.io.*");
+        /*
         addImport("java.util.*");
         addImport("java.util.regex.*");
         addImport("java.text.*");
+        */
         addImport("org.json.*");
         onCreateEventCode = new Fx(projectFileBean.getActivityName(), buildConfig, projectDataManager.a(projectFileBean.getJavaName(), "onCreate_initializeLogic"), isViewBindingEnabled).a();
-    }
+    } 
 
     private String getDrawerViewInitializer(ViewBean viewBean) {
         String replaceAll = WIDGET_NAME_PATTERN.matcher(viewBean.convert).replaceAll("");
