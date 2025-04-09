@@ -136,6 +136,8 @@ public class kq {
             case "setText":
             case "setTypeface":
             case "getText":
+            case "setHintText":
+            case "setHintTextColor":
             case "setBgColor":
             case "setBgResource":
             case "setTextColor":
