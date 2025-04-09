@@ -583,6 +583,11 @@ public class ExtraPaletteBlock {
                         logicEditor.a(" ", "setTypeface");
                         logicEditor.a(" ", "setTextColor");
                         logicEditor.a(" ", "setTextSize");
+                        logicEditor.a(" ", "setMaxLengthOfLetters");
+                        logicEditor.a(" ", "setAutofillHints");
+                        logicEditor.a(" ", "setTooltipText");
+                        logicEditor.a(" ", "setLinksClickable");
+                        logicEditor.a(" ", "setLinkTextColor");
                     }
 
                     if (editTextUsed) {
