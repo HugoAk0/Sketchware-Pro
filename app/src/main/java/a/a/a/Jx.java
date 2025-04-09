@@ -748,7 +748,7 @@ public class Jx {
                                     "});"
                     );
                 } else {
-                    fields.add("private Toolbar toolbar;");
+                    fields.add("private MaterialToolbar toolbar;");
                     fields.add("private AppBarLayout app_bar;");
                     fields.add("private CoordinatorLayout coordinator;");
 
