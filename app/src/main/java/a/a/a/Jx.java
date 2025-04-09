@@ -802,7 +802,7 @@ public class Jx {
                             "ActionBarDrawerToggle _toggle = new ActionBarDrawerToggle(" +
                             projectFileBean.getActivityName() + ".this, _drawer, " +
                             (projectFileBean.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_TOOLBAR) ?
-                                    "_toolbar, " : "") +
+                                    "toolbar, " : "") +
                             "R.string.app_name, R.string.app_name);" + EOL +
                             "_drawer.addDrawerListener(_toggle);" + EOL +
                             "_toggle.syncState();" + EOL + EOL +
@@ -830,8 +830,8 @@ public class Jx {
         addImport("android.animation.*");
         addImport("android.view.animation.*");
         addImport("java.io.*");
-        /*
         addImport("java.util.*");
+        /*
         addImport("java.util.regex.*");
         addImport("java.text.*");
         */
