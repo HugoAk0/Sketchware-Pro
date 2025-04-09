@@ -1167,7 +1167,7 @@ public class BlocksHandler {
 		arrayList.add(hashMap);
 		
 		hashMap = new HashMap<>();
-		hashMap.put("name", "setMaxLengthLetters");
+		hashMap.put("name", "setMaxLengthOfLetters");
 		hashMap.put("type", " ");
 		hashMap.put("code", "%s.setFilters(new InputFilter[]{new InputFilter.LengthFilter((int) %s)})");
 		hashMap.put("color", "#4A6CD4");
