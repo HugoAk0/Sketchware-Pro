@@ -136,11 +136,6 @@ public class kq {
             case "setText":
             case "setTypeface":
             case "getText":
-            case "setMaxLengthOfLetters":
-            case "setAutofillHints":
-            case "setTooltipText":
-            case "setLinksClickable":
-            case "setLinkTextColor":
             case "setBgColor":
             case "setBgResource":
             case "setTextColor":
