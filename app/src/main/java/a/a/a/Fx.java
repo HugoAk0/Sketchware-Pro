@@ -575,6 +575,21 @@ public class Fx {
             case "setText":
                 opcode = String.format("%s.setText(%s);", params.get(0), params.get(1));
                 break;
+            case "setMaxLengthOfLetters":
+                opcode = String.format("%s.setFilters(new InputFilter[]{new InputFilter.LengthFilter((int) %s)});", params.get(0), params.get(1));
+                break;
+            case "setLinkTextColor":
+                opcode = String.format("%s.setLinkTextColor(%s);", params.get(0), params.get(1));
+                break;
+            case "setLinksClickable":
+                opcode = String.format("%s.setLinksClickable(%s);", params.get(0), params.get(1));
+                break;
+            case "setTooltipText":
+                opcode = String.format("%s.setTooltipText(%s);", params.get(0), params.get(1));
+                break;
+            case "setAutofillHints":
+                opcode = String.format("%s.setAutofillHints(%s);", params.get(0), params.get(1));
+                break;
             case "setTypeface":
                 String textStyle = params.get(2);
                 Pair<Integer, String>[] styles = sq.a("property_text_style");
