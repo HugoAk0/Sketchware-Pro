@@ -142,7 +142,7 @@ public class ManageAppCompatActivity extends BaseAppCompatActivity {
         if (projectFile.fileType == ProjectFileBean.PROJECT_FILE_TYPE_ACTIVITY) {
             if (projectLibrary.isEnabled()) {
                 if (projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_TOOLBAR)) {
-                    appCompats.add("Toolbar");
+                    appCompats.add("MaterialToolbar");
                     appCompats.add("AppBarLayout");
                 }
                 if (projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_TOOLBAR)

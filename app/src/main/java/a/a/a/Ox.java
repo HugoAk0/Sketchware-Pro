@@ -128,7 +128,7 @@ public class Ox {
                 if (projectFile.hasActivityOption(ProjectFileBean.OPTION_ACTIVITY_TOOLBAR)) {
                     XmlBuilder toolbarTag = new XmlBuilder("com.google.android.material.appbar.MaterialToolbar");
                     toolbarTag.addAttribute("android", "id", "@+id/toolbar");
-                    aci.inject(toolbarTag, "Toolbar");
+                    aci.inject(toolbarTag, "MaterialToolbar");
                     XmlBuilder appBarLayoutTag = new XmlBuilder("com.google.android.material.appbar.AppBarLayout");
                     appBarLayoutTag.addAttribute("android", "id", "@+id/app_bar");
                     aci.inject(appBarLayoutTag, "AppBarLayout");

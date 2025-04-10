@@ -153,7 +153,7 @@ public class ViewBeanParser {
         Set<String> ids =
                 new HashSet<>(
                         Arrays.asList(
-                                "root", "_coordinator", "_app_bar", "_toolbar", "_fab", "_drawer"));
+                                "root", "coordinator", "app_bar", "toolbar", "_fab", "_drawer"));
         ArrayList<ViewBean> beans = new ArrayList<>();
         Map<String, Map<String, String>> beansAttributes = new HashMap<>();
         Stack<ViewBean> viewStack = new Stack<>();
