@@ -221,10 +221,10 @@ public class Fx {
                 int space = bean.spec.indexOf(" ");
                 if (bean.parameters.isEmpty()) {
                     opcode = bean.type;
-                    moreBlock = (space < 0 ? bean.spec : bean.spec.substring(0, space)) + "()" + ReturnMoreblockManager.getMbEnd(bean.type);
+                    moreBlock = "_" + (space < 0 ? bean.spec : bean.spec.substring(0, space)) + "()" + ReturnMoreblockManager.getMbEnd(bean.type);
                 } else {
                     ArrayList<String> paramsTypes = extractParamsTypes(bean.spec);
-                    opcode = bean.spec.substring(0, space) + "(";
+                    opcode = "_" + bean.spec.substring(0, space) + "(";
                     boolean hasStringParam = false;
 
                     for (int i = 0; i < params.size(); i++) {
@@ -253,7 +253,7 @@ public class Fx {
                 moreBlock = op;
                 break;
             case "getArg":
-                opcode = bean.spec;
+                opcode = "_" + bean.spec;
                 break;
             case "getVar":
                 opcode = bean.spec;
@@ -353,7 +353,7 @@ public class Fx {
             case "repeat":
                 stack = bean.subStack1;
                 opcode = String.format("""
-                                for(int repeat%s = 0; repeat%s < (int)(%s); repeat%s++) {
+                                for(int _repeat%s = 0; _repeat%s < (int)(%s); _repeat%s++) {
                                 %s
                                 }""",
                         bean.id, bean.id, params.get(0), bean.id,
@@ -574,21 +574,6 @@ public class Fx {
                 break;
             case "setText":
                 opcode = String.format("%s.setText(%s);", params.get(0), params.get(1));
-                break;
-            case "setMaxLengthOfLetters":
-                opcode = String.format("%s.setFilters(new InputFilter[]{new InputFilter.LengthFilter((int) %s)});", params.get(0), params.get(1));
-                break;
-            case "setLinkTextColor":
-                opcode = String.format("%s.setLinkTextColor(%s);", params.get(0), params.get(1));
-                break;
-            case "setLinksClickable":
-                opcode = String.format("%s.setLinksClickable(%s);", params.get(0), params.get(1));
-                break;
-            case "setTooltipText":
-                opcode = String.format("%s.setTooltipText(%s);", params.get(0), params.get(1));
-                break;
-            case "setAutofillHints":
-                opcode = String.format("%s.setAutofillHints(%s);", params.get(0), params.get(1));
                 break;
             case "setTypeface":
                 String textStyle = params.get(2);
